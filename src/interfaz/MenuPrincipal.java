@@ -29,6 +29,7 @@ public class MenuPrincipal {
         MenuAsignaciones m3 = new MenuAsignaciones(sistema);
         MenuLogistica m4 = new MenuLogistica(sistema);
         MenuParametros m5 = new MenuParametros(sistema);
+        MenuRutas m6 = new MenuRutas(sistema);
 
         int opcion;
         do {
@@ -39,14 +40,16 @@ public class MenuPrincipal {
             System.out.println("3. M3 - Receptores y asignaciones");
             System.out.println("4. M4 - Retiros, entregas e incidentes");
             System.out.println("5. M5 - Parámetros, indicadores y trazabilidad");
+            System.out.println("6. M6 - Planificación de rutas de retiro (módulo adicional)");
             System.out.println("0. Salir");
-            opcion = Consola.leerEntero("Opción: ", 0, 5);
+            opcion = Consola.leerEntero("Opción: ", 0, 6);
             switch (opcion) {
                 case 1: m1.mostrar(); break;
                 case 2: m2.mostrar(); break;
                 case 3: m3.mostrar(); break;
                 case 4: m4.mostrar(); break;
                 case 5: m5.mostrar(); break;
+                case 6: m6.mostrar(); break;
                 default: System.out.println("Gracias por usar ReVive Alimentos.");
             }
         } while (opcion != 0);
