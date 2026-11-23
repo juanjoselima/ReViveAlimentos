@@ -22,6 +22,8 @@ public class SistemaReVive {
     private ArrayList<Categoria> categorias = new ArrayList<>();
     private ArrayList<Unidad> unidades = new ArrayList<>();
     private ArrayList<CambioParametro> historialParametros = new ArrayList<>();
+    private ArrayList<Vehiculo> vehiculos = new ArrayList<>();      // M6
+    private ArrayList<RutaRetiro> rutas = new ArrayList<>();        // M6
     private Parametros parametros = new Parametros();
 
     // Un gestor por módulo
@@ -33,6 +35,7 @@ public class SistemaReVive {
     private GestorParametros gestorParametros;      // M5
     private GestorIndicadores gestorIndicadores;    // M5
     private BitacoraTrazabilidad bitacora;          // M5
+    private GestorRutas gestorRutas;                // M6 (módulo adicional)
 
     public SistemaReVive() {
         bitacora = new BitacoraTrazabilidad();
@@ -43,6 +46,7 @@ public class SistemaReVive {
         gestorLogistica = new GestorLogistica(this);
         gestorParametros = new GestorParametros(this);
         gestorIndicadores = new GestorIndicadores(this);
+        gestorRutas = new GestorRutas(this);
         cargarCatalogosBase();
     }
 
@@ -82,6 +86,8 @@ public class SistemaReVive {
     public ArrayList<Unidad> getUnidades() { return unidades; }
     public ArrayList<CambioParametro> getHistorialParametros() { return historialParametros; }
     public Parametros getParametros() { return parametros; }
+    public ArrayList<Vehiculo> getVehiculos() { return vehiculos; }
+    public ArrayList<RutaRetiro> getRutas() { return rutas; }
 
     public GestorDonantes getGestorDonantes() { return gestorDonantes; }
     public GestorOfertas getGestorOfertas() { return gestorOfertas; }
@@ -91,4 +97,5 @@ public class SistemaReVive {
     public GestorParametros getGestorParametros() { return gestorParametros; }
     public GestorIndicadores getGestorIndicadores() { return gestorIndicadores; }
     public BitacoraTrazabilidad getBitacora() { return bitacora; }
+    public GestorRutas getGestorRutas() { return gestorRutas; }
 }
