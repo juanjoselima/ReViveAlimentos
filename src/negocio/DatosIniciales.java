@@ -68,6 +68,11 @@ public class DatosIniciales {
         // Dos ofertas ya evaluadas para poder asignar de inmediato (RF-06)
         ge.evaluarOferta(pan, eva, true, true, true);
         ge.evaluarOferta(comida, eva, true, true, true);
+
+        // Vehículos de la red (RF-21, módulo adicional M6)
+        GestorRutas gr = s.getGestorRutas();
+        gr.registrarVehiculo("PBA-1234", "Camioneta furgón refrigerada", 300, true);
+        gr.registrarVehiculo("PCD-567", "Camioneta de carga", 150, false);
     }
 
     private static ArrayList<FranjaHoraria> franjas(String... horas) {
